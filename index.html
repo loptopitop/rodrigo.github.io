@@ -1,0 +1,311 @@
+<html>
+    <head>
+        <title>Final Project</title>
+        <script src="modernizr-custom.js"></script>
+        <link rel="stylesheet" href="form.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="prefixfree.min.js"></script>
+        <script src="modernizr-custom.js"></script>
+        <link rel="stylesheet" type="text/css" href="assignment.css">
+        <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+        <link rel="stylesheet" href="a3.css">
+    </head>
+
+    <body>
+        <h1 style="height: 40px; text-align: center">Final Project</h1>
+        <h2 style="height: 40px; text-align: center">Mobile Web Applications Development</h2>
+        <h2 style="text-align: center">Rodrigo Elustondo</h2>
+
+        <h1>Phone Gap</h1>
+        
+        <h1>Form</h1>
+
+     <progress max="100" value="0" id="progress"></progress>
+    <form id="user">
+        <div>
+          <label for="email">Email:</label>
+          <input type = "email" id="email" name="email">
+        </div>
+        <div>
+            <label for="url">Personal URL:</label>
+            <input id="url" name="url">
+        </div>
+        <div>
+            <label for="date">Year of Birth</label>
+            <input type="number" id="date" name="amount" value="2000" min="1900" max="2018">
+        </div>
+        <p>
+            <fieldset>
+              <legend>Gender<abbr title="This field is mandatory">*</abbr></legend>
+              <input type="radio" required name="title" id="r1" value="M"><label for="r1">Male</label>
+              <input type="radio" required name="title" id="r2" value="F"><label for="r2">Female</label>
+            </fieldset>
+          </p>
+        <p>
+            <label for="t3">Comments</label>
+            <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+        </p>
+        
+        <div>
+          <button type = "reset" value="Reset">Clear all</button>
+        </div>
+<div>
+    <input type="checkbox">
+</div>
+      </form>
+        <!-- <script>
+            if (Modernizr.progressbar,meter) {
+                var x = document.getElementById('email').value;
+                if (x.length == 0){
+                    console.log("Lenght = 0");
+                }
+                 else {
+                    console.log("Lenght = 1");
+                }
+            }
+        </script> -->
+        <script>
+            
+        $("#user").keyup(function() {
+  
+            var email = document.getElementById("email");
+            var url = document.getElementById("url");
+            var progress = document.getElementById("progress");
+
+            if (email.value.length != 0)
+                {
+                    progress.value = 30;
+                }
+                
+            var url = document.getElementById("url").value;
+            if (document.getElementById("url").value.length != 0)
+                {
+                    progress.value = 60;
+                }
+            
+        });
+    </script>
+      <h1>Hover</h1>
+      <p>When we hover over the below heading it displays cursor in vertical alighment.</p>
+      <div>
+        <button class="hover">Hover over me</button>
+      </div>
+          </div><!-- #result -->
+            </div>
+
+        <hr>
+
+        <h1>Border</h1>
+        <p>This box has curved borders</p>
+        <div class="element3" style="height: 60px; width: 80px; background-color: yellow;">
+          
+        </div>
+  
+          <hr>
+        <br><br>
+        <h1>Detects</h1>
+        <h4>This button detects if geolocation is available</h4>
+        <div class="checking-geo-location">
+        <button id="input1">Checking Geo Location</button>
+        </div>
+
+        <h4>This button detects if progress bar is available</h4>
+        <button id="input2">Checking Progress Bar Support</button>
+
+        <br>
+        <br>
+        <h1>Media Queries</h1>
+        <div id="mq">
+            <div>Box 1</div>
+            <div>Box 2</div>
+            <div>Box 3</div>
+        </div>
+
+    <script src="assignment.js"></script>
+
+
+    <h2>Map</h2>
+
+    <button onclick="Seemylocation()">See my location</button>
+
+    <select id="123" onchange="myMap()">
+        <option value="0">Ontario</option>
+        <option value="1">Alberta</option>
+        <option value="2">Saskatchewan</option>
+        <option value="3">British Columbia</option>
+        <option value="4">Yukon</option>
+        <option value="5">Quebec</option>
+        <option value="6">Northwest Territories</option>
+        <option value="7">Nunuvut</option>
+        <option value="8">Nova Scotia</option>
+        <option value="9">Manitoba</option>
+        <option value="10">Newfoundland and Labrador</option>
+        <option value="11">New Brunswick</option>
+        <option value="12">Prince Edward Island</option>
+
+    </select>
+
+    <div id="map" style="width: 400px; height: 400px; background-color: yellow;"></div>
+    <script src="A3.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+    <h2>tap, pan, press and hold, swipe,  hammer</h2>
+    <div id="myElement"></div>
+    
+    <div class="center-center">
+            <div class="square">Press and hold</div>
+    </div>
+    <div class="flex-column center-center2">  
+            <header>Swipe Left or Right</header>
+            <div class="square2 center-center2"></div>
+    </div>  
+    <div> <h2>Javascipt API:Camera (Use google chrome)</h2>
+        <video id="video" width="640" height="480" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+<script>
+   var a=document.getElementById("canvas").getContext("2d"),b=document.getElementById("video");document.getElementById("snap").addEventListener("click",function(){a.drawImage(b,0,0,640,480)});b=document.getElementById("video");navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&navigator.mediaDevices.getUserMedia({video:!0}).then(function(c){b.src=window.URL.createObjectURL(c);b.play()});
+</script>
+    <script>
+        var myElement=document.getElementById("myElement"),mc=new Hammer(myElement);mc.get("pan").set({direction:Hammer.DIRECTION_ALL});mc.on("panleft panright panup pandown tap press",function(a){myElement.textContent=a.type+" gesture detected."});var myElement2=document.getElementById("myElement2"),mx=new Hammer.Manager(myElement2),pinch=new Hammer.Pinch,rotate=new Hammer.Rotate;pinch.recognizeWith(rotate);mx.add([pinch,rotate]);mx.on("pinch rotate",function(a){myElement.textContent+=a.type+" rotate worked "});
+        </script>
+
+        <script>
+          
+// Get a reference to an element
+var square = document.querySelector('.square');
+
+// Create a manager to manager the element
+var manager = new Hammer.Manager(square);
+
+// Create a recognizer
+var Press = new Hammer.Press({
+  time: 500
+});
+
+// Add the recognizer to the manager
+manager.add(Press);
+
+// Subscribe to desired event
+manager.on('press', function(e) {
+  e.target.classList.toggle('expand');
+});
+
+</script>
+<script>
+    // Get a reference to an element
+var square = document.querySelector('.square2');
+
+// Create a manager to manager the element
+var manager = new Hammer.Manager(square);
+
+// Create a recognizer
+var Swipe = new Hammer.Swipe();
+
+// Add the recognizer to the manager
+manager.add(Swipe);
+
+// Declare global variables to swiped correct distance
+var deltaX = 0;
+var deltaY = 0;
+
+// Subscribe to a desired event
+manager.on('swipe', function(e) {
+  deltaX = deltaX + e.deltaX;
+  var direction = e.offsetDirection;
+  var translate3d = 'translate3d(' + deltaX + 'px, 0, 0)';
+  
+  if (direction === 4 || direction === 2) {
+    e.target.innerText = deltaX;
+    e.target.style.transform = translate3d;
+  }
+});
+
+</script>
+
+<table style="width: 100%;height: 1000px">
+    <tr>
+        <Td>Features</Td>
+        <Td>CodeLine#</Td>
+        <Td>Safari</Td>
+        <Td>Chrome</Td>
+        <Td>FireFox</Td>      
+    </tr>
+    <tr>
+        <Td> an HTML5‐validated form fields: email address, personal URL, year of birth (numeric increments), gender (radio button) </Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td> Html5- validated form fields: comments (text area), a “Clear All” button, and a checkbox to confirm that the data entered are fictitious.</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>QR code generated by PhoneGap Build which allows your app to be downloaded</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>prefixes CSS3 features - Hover</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>prefixes CSS3 features - Border</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>Modernizer Progress meter detect and geo location detect</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>CSS media Queries - deliver different content depending on devices orientation</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>Geo Location and Maps</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>Tap + Pan + Swipe + Press and hold Hammer Gestures</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+    <tr>
+        <Td>JavaScript Camera API</Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>
+        <Td></Td>  
+    </tr>
+</table>
+
+    </body>
+</html>
